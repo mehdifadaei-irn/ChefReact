@@ -394,6 +394,10 @@ span.text-red {
     padding: 20px;
 }
 
+.socials-link {
+    cursor: pointer;
+}
+
 .product .cart-product-image {
     width: 180px;
     height: 150px;
@@ -669,7 +673,7 @@ span.text-red {
 
 .success .icon {
     color: green;
-    font-size: 40px;
+    font-size: 80px;
 }
 
 .success h2 {
