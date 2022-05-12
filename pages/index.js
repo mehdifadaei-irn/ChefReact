@@ -1,24 +1,42 @@
-import Head from 'next/head'
+import React from 'react';
+import {HeroBanner, FooterBanner} from "../comps";
 
-const Home = () => {
-  return (
-      <>
-        HeroBanner
+import { client} from '../lib/client';
 
-        <div>
-          <h2>best selling Products</h2>
-          <p>Speakers of many variations</p>
-        </div>
+const Home = ({products, banners}) => {
 
-        <div>
-            {['Product1', 'Product2'].map((p)=>
-                p
-            )}
-        </div>
+    console.log(banners)
 
-          Footer
-      </>
-  )
+    return (
+        <>
+            <HeroBanner heroBanner={banners.length && banners[0]}/>
+
+            <div className={'products-heading'}>
+                <h2>Best selling Products</h2>
+                <p>Speakers of many variations</p>
+            </div>
+
+            <div className={'products-container'}>
+                {products?.map((product)=> product.name)}
+            </div>
+
+            <FooterBanner/>
+        </>
+    )
 }
+
+export const getServerSideProps= async ()=> {
+    const query = '*[_type == "product"]';
+    const products = await client.fetch(query);
+
+    const bannerQuery = '*[_type == "banner"]';
+    const banners = await client.fetch(bannerQuery);
+
+    return {
+        props: {products, banners}
+    }
+}
+
+
 
 export default Home;
