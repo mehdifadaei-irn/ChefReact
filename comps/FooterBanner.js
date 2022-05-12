@@ -20,7 +20,7 @@ const FooterBanner = ({footerBanner:{discount,desc, largeText1, largeText2, sale
                     <h3>{midText}</h3>
                     <p>{desc}</p>
                     <Link href={`/product/${product}`}>
-                        <button type={"button"}>{buttonText}</button>
+                        <button type={"button"} style={{ zIndex: '24'}}>{buttonText}</button>
                     </Link>
                 </div>
 

@@ -714,15 +714,20 @@ span.text-red {
 .product-max-qty {
     margin-top: 10px;
 }
-@media screen and (max-width: 800px) {
-    .buttons {
-        flex-direction: column;
-    }
+
+.image-container{
+    width: 85%;
+}
+@media screen and (max-width: 1200px) {
+
 }
 
 @media screen and (max-width: 800px) {
     .hero-banner-container {
         height: 560px;
+    }
+    .image-container{
+        width: 100%;
     }
 
     .hero-banner-image {
