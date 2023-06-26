@@ -1,5 +1,3 @@
-## run "npm install"
-### then run "yarn dev"
 
 ![CV](./public/main.PNG)
 ![CV](./public/main2.PNG)
